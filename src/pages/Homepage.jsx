@@ -56,7 +56,7 @@ export default function Homepage({ onOpenLogin }) {
           <div className="hero-center">
             <img src={`${BASE}images/logo.png`} alt="강주방" className="hero-logo" />
             <p className="hero-tagline">
-              고객의 니즈를 정확히 이해하고, 빠르게 실행하는<br />업소용 주방 토탈 서비스
+              고객의 니즈를 정확히 이해하고, 빠르게 실행하는<br className="pc-br" />업소용 주방 토탈 서비스
             </p>
           </div>
           <div className="hero-scroll">
@@ -130,7 +130,7 @@ export default function Homepage({ onOpenLogin }) {
           <div className="company-card">
             <div className="company-left">
               <span className="tag">COMPANY PROFILE</span>
-              <h2>식당 및 프랜차이즈 전문<br /><strong>업소용 주방 파트너, 강주방</strong></h2>
+              <h2>식당 및 프랜차이즈 전문<br className="pc-br" /><strong>업소용 주방 파트너, 강주방</strong></h2>
               <p>전국 주요 대표 브랜드 제조사 공장과의 직거래 네트워크를 통해, 검증된 정품 주방 기기를 불필요한 유통 거품 없이 가장 합리적인 가격에 공급합니다.</p>
               <p className="sub-text">25년 동안 현장에서 축적된 경험과 노하우를 바탕으로, 20년 경력의 베테랑 엔지니어들이 주방 기기 설치부터 마무리 전기, 가스, 급배수 연동까지 완벽하게 직접 시공합니다.</p>
               <div className="feature-list">
@@ -248,7 +248,7 @@ export default function Homepage({ onOpenLogin }) {
         <div className="container contact-inner">
           <div className="contact-info">
             <span className="tag light">CONTACT US</span>
-            <h2>성공적인 창업의 첫걸음,<br />강주방과 시작하세요</h2>
+            <h2>성공적인 창업의 첫걸음,<br className="pc-br" />강주방과 시작하세요</h2>
             <p>3D 도면 컨설팅부터 맞춤 제작 견적, 전국 AS까지 원클릭으로 신청하세요.</p>
             <div className="contact-phone">
               <Phone size={24} />
@@ -909,12 +909,32 @@ export default function Homepage({ onOpenLogin }) {
           .contact-inner { grid-template-columns: 1fr; }
           .hero-logo { width: 160px; }
           .hero-tagline { font-size: 16px; }
+
+          /* Mobile heading optimization */
+          .company-left h2 { font-size: 26px; }
+          .section-head h2 { font-size: 28px; }
+          .contact-info h2 { font-size: 26px; }
+          .biz-text h3 { font-size: 20px; }
+          
+          /* Prevent awkward wraps in Korean typography */
+          h1, h2, h3, h4, p, span, strong, li {
+            word-break: keep-all;
+            overflow-wrap: break-word;
+          }
+          .pc-br { display: none; }
         }
 
         @media (max-width: 600px) {
           .stat-item { flex: 0 0 100%; }
           .port-grid { grid-template-columns: 1fr; }
           .center-top { font-size: 20px; }
+          .company-left h2 { font-size: 22px; }
+          .section-head h2 { font-size: 24px; }
+          .contact-info h2 { font-size: 22px; }
+          .hero-tagline { font-size: 14px; line-height: 1.6; }
+          .hero-logo { width: 140px; }
+          .about-cell.text-cell { font-size: 18px; }
+          .about-cell.text-cell.sub { font-size: 15px; }
         }
       `}</style>
     </div>
