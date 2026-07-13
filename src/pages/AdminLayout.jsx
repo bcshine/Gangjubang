@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { NavLink, Outlet, useNavigate, Link } from 'react-router-dom';
 import { LayoutDashboard, Users, BarChart3, Home, Menu, X, LogOut, Shield } from 'lucide-react';
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function AdminLayout({ customers, setCustomers, inquiries, setInquiries }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const navigate = useNavigate();
@@ -18,7 +20,7 @@ export default function AdminLayout({ customers, setCustomers, inquiries, setInq
       <aside className={`admin-sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
           <Link to="/" className="sidebar-logo">
-            <img src="/images/logo.png" alt="강주방 CRM" className="sidebar-logo-img" />
+            <img src={`${BASE}images/logo.png`} alt="강주방 CRM" className="sidebar-logo-img" />
           </Link>
           <button className="sidebar-close-btn" onClick={() => setIsSidebarOpen(false)}>
             <X size={18} />

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { User, Menu, X } from 'lucide-react';
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function Header({ onOpenLogin }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -33,7 +35,7 @@ export default function Header({ onOpenLogin }) {
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
       <Link to="/" className="header-logo">
         <img 
-          src="/images/logo.png" 
+          src={`${BASE}images/logo.png`}
           alt="강주방" 
           className="logo-img" 
         />

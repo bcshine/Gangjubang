@@ -4,6 +4,8 @@ import {
   ShieldCheck, Phone, Send, CheckCircle
 } from 'lucide-react';
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function Homepage({ onOpenLogin }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -33,26 +35,26 @@ export default function Homepage({ onOpenLogin }) {
   };
 
   const portfolioImages = [
-    { src: '/images/image57.jpg', title: '강남 프랜차이즈 식당' },
-    { src: '/images/image58.jpg', title: '인천 대형 이자카야' },
-    { src: '/images/image59.jpg', title: '김포 베이커리 카페' },
-    { src: '/images/image50.jpg', title: '한식 전문 프랜차이즈' },
-    { src: '/images/image52.jpg', title: '일식 초밥 전문점' },
-    { src: '/images/image53.jpg', title: '고급 한우 레스토랑' },
-    { src: '/images/image5.jpg', title: '업소용 주방 전경' },
-    { src: '/images/image10.jpeg', title: '주방기기 대형 창고' },
+    { src: `${BASE}images/image57.jpg`, title: '강남 프랜차이즈 식당' },
+    { src: `${BASE}images/image58.jpg`, title: '인천 대형 이자카야' },
+    { src: `${BASE}images/image59.jpg`, title: '김포 베이커리 카페' },
+    { src: `${BASE}images/image50.jpg`, title: '한식 전문 프랜차이즈' },
+    { src: `${BASE}images/image52.jpg`, title: '일식 초밥 전문점' },
+    { src: `${BASE}images/image53.jpg`, title: '고급 한우 레스토랑' },
+    { src: `${BASE}images/image5.jpg`, title: '업소용 주방 전경' },
+    { src: `${BASE}images/image10.jpeg`, title: '주방기기 대형 창고' },
   ];
 
   return (
     <div className="homepage-wrapper">
 
       {/* ── HERO ── 100vh immersive */}
-      <section className="hero-section">
+      <section className="hero-section" style={{ backgroundImage: `url(${BASE}images/commercial_kitchen.png)` }}>
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <p className="hero-eng">STRONG KITCHEN, TRUSTED PARTNER</p>
           <div className="hero-center">
-            <img src="/images/logo.png" alt="강주방" className="hero-logo" />
+            <img src={`${BASE}images/logo.png`} alt="강주방" className="hero-logo" />
             <p className="hero-tagline">
               고객의 니즈를 정확히 이해하고, 빠르게 실행하는<br />업소용 주방 토탈 서비스
             </p>
@@ -93,14 +95,14 @@ export default function Homepage({ onOpenLogin }) {
       <section id="about" className="section-about">
         <div className="about-grid">
           <div className="about-cell img-cell">
-            <img src="/images/image5.jpg" alt="" />
+            <img src={`${BASE}images/image5.jpg`} alt="" />
           </div>
           <div className="about-cell text-cell">
             <span>당신의 주방에</span><br />
             <span>가치를 더하다</span>
           </div>
           <div className="about-cell img-cell">
-            <img src="/images/image10.jpeg" alt="" />
+            <img src={`${BASE}images/image10.jpeg`} alt="" />
           </div>
           <div className="about-cell center-cell">
             <div className="center-inner">
@@ -113,7 +115,7 @@ export default function Homepage({ onOpenLogin }) {
             </div>
           </div>
           <div className="about-cell img-cell">
-            <img src="/images/image11.jpeg" alt="" />
+            <img src={`${BASE}images/image11.jpeg`} alt="" />
           </div>
           <div className="about-cell text-cell sub">
             좋은 주방이<br />
@@ -160,7 +162,7 @@ export default function Homepage({ onOpenLogin }) {
           </div>
 
           <div className="biz-block">
-            <div className="biz-img"><img src="/images/image10.jpeg" alt="도소매" /></div>
+            <div className="biz-img"><img src={`${BASE}images/image10.jpeg`} alt="도소매" /></div>
             <div className="biz-text">
               <span className="biz-num">01</span>
               <h3>업소용 주방기기 도 / 소매</h3>
@@ -170,7 +172,7 @@ export default function Homepage({ onOpenLogin }) {
           </div>
 
           <div className="biz-block reverse">
-            <div className="biz-img"><img src="/images/image11.jpeg" alt="OEM" /></div>
+            <div className="biz-img"><img src={`${BASE}images/image11.jpeg`} alt="OEM" /></div>
             <div className="biz-text">
               <span className="biz-num">02</span>
               <h3>제조 및 OEM 주문 생산</h3>
@@ -180,7 +182,7 @@ export default function Homepage({ onOpenLogin }) {
           </div>
 
           <div className="biz-block">
-            <div className="biz-img"><img src="/images/image9.jpeg" alt="수출" /></div>
+            <div className="biz-img"><img src={`${BASE}images/image9.jpeg`} alt="수출" /></div>
             <div className="biz-text">
               <span className="biz-num">03</span>
               <h3>K-푸드 글로벌 해외 수출</h3>
@@ -301,7 +303,7 @@ export default function Homepage({ onOpenLogin }) {
           width: 100%;
           height: 100vh;
           min-height: 600px;
-          background-image: url('/images/commercial_kitchen.png');
+          /* background-image set via inline style for BASE_URL */
           background-size: cover;
           background-position: center;
           display: flex;

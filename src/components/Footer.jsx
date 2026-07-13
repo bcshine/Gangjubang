@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="container footer-inner">
         <div className="footer-top">
           <div className="footer-brand">
-            <img src="/images/logo.png" alt="강주방" className="footer-logo" />
+            <img src={`${BASE}images/logo.png`} alt="강주방" className="footer-logo" />
             <p className="footer-desc">
               25년 업력의 업소용 주방 전문 기업.<br />
               고객의 니즈를 정확히 이해하고, 빠르게 실행합니다.
