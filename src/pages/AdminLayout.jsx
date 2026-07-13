@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Outlet, useNavigate, Link } from 'react-router-dom';
 import { LayoutDashboard, Users, BarChart3, Home, Menu, X, LogOut, Shield } from 'lucide-react';
 
-const BASE = import.meta.env.BASE_URL;
+const BASE = '/';
 
 export default function AdminLayout({ customers, setCustomers, inquiries, setInquiries }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);

@@ -4,7 +4,7 @@ import {
   ShieldCheck, Phone, Send, CheckCircle
 } from 'lucide-react';
 
-const BASE = import.meta.env.BASE_URL;
+const BASE = '/';
 
 export default function Homepage({ onOpenLogin }) {
   const [formData, setFormData] = useState({

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BASE = import.meta.env.BASE_URL;
+const BASE = '/';
 
 export default function Footer() {
   return (

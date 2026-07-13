@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { User, Menu, X } from 'lucide-react';
 
-const BASE = import.meta.env.BASE_URL;
+const BASE = '/';
 
 export default function Header({ onOpenLogin }) {
   const [isScrolled, setIsScrolled] = useState(false);
